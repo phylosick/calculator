@@ -194,6 +194,10 @@ class _HomePageState extends State<HomePage> {
     String finaluserinput = userInput;
     finaluserinput = userInput.replaceAll('x', '*');
 
+    Parser p = Parser();
+    Expression exp = p.parse(finaluserinput);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
     answer = toString();
   }
 }
